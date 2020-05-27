@@ -3,7 +3,6 @@
 }
 
 @using ToDoList.Models;
-@model List<ToDoList.Models.Item>;
 
 <h1>Items</h1>
 
@@ -14,9 +13,5 @@
 
 @foreach (Item item in Model)
 {
-  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | @item.Category.Name</li>
+  <li>@item.Description</li>
 }
-
-<p>@Html.ActionLink("Add new item", "Create")</p>
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
