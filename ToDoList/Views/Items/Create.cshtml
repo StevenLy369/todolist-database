@@ -11,8 +11,15 @@
     @Html.LabelFor(model => model.Description)
     @Html.TextBoxFor(model => model.Description)
 
-    @Html.LabelFor(model => model.Category)
+    @Html.Label("Select category")
     @Html.DropDownList("CategoryId")
+
+    @Html.LabelFor(model => model.Complete)
+    @Html.CheckBoxFor(model => model.Complete)
+
+    @Html.Label("Due date")
+    @Html.TextBoxFor(model => model.DueDate,
+      "{0:MM-dd-yyyy}", new { @type = "date"})
 
     <input type="submit" value="Add new item" class="btn btn-default" />
 }
